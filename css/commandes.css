@@ -1,0 +1,122 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: poppins, arial;
+}
+/* les couleurs */
+:root{
+    --mainColor: rgb(241, 177, 0);
+    --darkColor: #061623;
+    --lightColor: aliceblue;
+}
+body{
+    background-color: rgb(255, 253, 249);
+}
+/* header */
+header{
+    display: flex;
+    border-bottom: 1.5px solid #eee;
+    justify-content: space-between;
+    background-color: white;
+    align-items: center;
+    padding: 10px 35px;
+}
+header .logo img{
+    width: 160px;
+    margin-bottom: -5px;
+}
+header .btns{
+    display: flex;
+    gap: 10px;
+}
+header .btns > button:first-child{
+    background-color: var(--mainColor);
+    border: none;
+    outline: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--lightColor);
+    cursor: pointer;
+}
+header .btns .wrapper{
+    display: flex;
+    border: 2px solid #eee;
+    border-radius: 7px;
+}
+header .btns .wrapper button{
+    background-color: transparent;
+    border: none;
+    outline: none;
+    width: 45px;
+    height: 45px;
+    font-size: 25px;
+    cursor: pointer;
+    position: relative;
+}
+header .btns .wrapper button a{
+    text-decoration: none;
+    color: var(--darkColor);
+}
+header .btns .wrapper .pannier span{
+    background-color: var(--mainColor);
+    border-radius: 50%;
+    min-width: 20px;
+    min-height: 20px;
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    font-size: 13px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    color: var(--lightColor);
+    z-index: 100;
+}
+header .btns .wrapper button:last-child{
+    border-left: 2px solid #eee;
+}
+
+.main-section{
+    padding: 35px;
+}
+table{
+    border-collapse: collapse;
+    width: 100%;
+    text-align: center;
+
+    & thead tr{
+        background-color: var(--mainColor);
+        border-radius: 7px;
+        & th{
+            padding: 15px;
+            color: var(--lightColor);
+        }
+        & th:first-child{
+            border-radius: 8px 0 0 0;
+        }
+        & th:last-child{
+            border-radius: 0 8px 0 0;
+        }
+    }
+    & tbody tr{
+        border-radius: 7px;
+        background-color: white;
+        border: 2px dashed #eee;
+        & td{
+            padding: 15px;
+            & form button{
+                padding: 10px 25px;
+                background-color: var(--mainColor);
+                border-radius: 8px;
+                outline: none;
+                border: none;
+                color: var(--lightColor);
+                cursor: pointer;
+            }
+        }
+    }
+}

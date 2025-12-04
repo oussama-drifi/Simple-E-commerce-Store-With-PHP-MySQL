@@ -1,0 +1,175 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: poppins, arial;
+}
+:root{
+    --mainColor: rgb(241, 177, 0);
+    --darkColor: #061623;
+    --lightColor: aliceblue;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+/* header */
+header{
+    background-color: white;
+    display: flex;
+    border-bottom: 1.5px solid #eee;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 35px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+header .logo img{
+    width: 160px;
+    margin-bottom: -5px;
+}
+header .btns{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+header .btns .links a {
+    color: var(--darkColor);
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    margin-right: 8px;
+    position: relative;
+    transition-duration: 0.3s;
+}
+header .btns .links a:hover{
+    color: var(--mainColor);
+}
+header .btns .links a::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    border-radius: 8px;
+    left: 0;
+    bottom: -3px;
+    background-color: var(--mainColor);
+    transition-duration: 0.3s;
+    transform: scaleX(0);
+}
+header .btns .links a:hover::before{
+    transform: scaleX(0.4);
+}
+header .btns > button{
+    background-color: var(--mainColor);
+    border: none;
+    outline: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--lightColor);
+    cursor: pointer;
+    transition-duration: 0.35s;
+}
+header .btns > button:hover{
+    background-color: rgb(211, 155, 0);
+}
+header .btns .wrapper{
+    display: flex;
+    border: 2px solid #eee;
+    border-radius: 7px;
+}
+header .btns .wrapper button{
+    background-color: transparent;
+    border: none;
+    outline: none;
+    width: 45px;
+    height: 45px;
+    font-size: 25px;
+    cursor: pointer;
+    position: relative;
+}
+header .btns .wrapper a{
+    text-decoration: none;
+    color: var(--darkColor);
+}
+header .btns .wrapper button span{
+    background-color: var(--mainColor);
+    border-radius: 50%;
+    min-width: 20px;
+    min-height: 20px;
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    font-size: 13px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    color: var(--lightColor);
+    z-index: 100;
+}
+header .btns .wrapper button:last-child{
+    border-left: 2px solid #eee;
+}
+/* content */
+.container{
+    padding: 0px 35px;
+    margin-top: 70px;
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+.container .details > input{
+    padding: 10px;
+    border-radius: 10px;
+    width: 100px;
+    border: 2px solid #eee;
+    background-color: transparent;
+    outline: none;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+.container .image img{
+    min-width: 400px;
+    max-width: 500px;
+}
+.container .details{
+    padding-right: 40px;
+}
+.container .details .btns{
+    margin-top: 15px;
+}
+.container .details .btns button{
+    padding: 10px;
+    font-weight: 600;
+    font-size: 16px;
+    border-radius: 60px;
+    color: aliceblue;
+    background-color: var(--mainColor);
+    width: 100%;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    transition-duration: 0.3s;
+}
+.container .details .btns button:hover{
+    background-color: rgb(224, 146, 0);
+}
+@media (width < 1000px) {
+    .container .image img{
+        width: 200px;
+    
+    }
+}
+@media (width < 900px){
+    .container{
+        flex-direction: column;
+    }
+}

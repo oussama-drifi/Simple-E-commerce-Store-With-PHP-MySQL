@@ -1,0 +1,256 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: poppins, arial;
+}
+body{
+    background-color: rgb(255, 253, 249);
+}
+/* les couleurs */
+:root{
+    --mainColor: rgb(241, 177, 0);
+    --darkColor: #061623;
+    --lightColor: aliceblue;
+}
+/* header */
+header{
+    display: flex;
+    background-color: white;
+    border-bottom: 1.5px solid #eee;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 35px;
+}
+header .logo img{
+    width: 160px;
+    margin-bottom: -5px;
+}
+header .btns{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+header .btns .links a {
+    color: var(--darkColor);
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    margin-right: 8px;
+    position: relative;
+    transition-duration: 0.3s;
+}
+header .btns .links a:hover{
+    color: var(--mainColor);
+}
+header .btns .links a::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    border-radius: 8px;
+    left: 0;
+    bottom: -3px;
+    background-color: var(--mainColor);
+    transition-duration: 0.3s;
+    transform: scaleX(0);
+}
+header .btns .links a:hover::before{
+    transform: scaleX(0.4);
+}
+header .btns > button{
+    background-color: var(--mainColor);
+    border: none;
+    outline: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--lightColor);
+    cursor: pointer;
+    transition-duration: 0.35s;
+}
+header .btns button:hover{
+    background-color: rgb(211, 155, 0);
+}
+/* les produits */
+.container{
+    padding: 20px 35px;
+    display: flex;
+    min-height: calc(100vh - 68px);
+    justify-content: space-between;
+    align-items: start;
+}
+.container .produits{
+    width: 70%;
+    display: flex;
+    /* gap: 10px; */
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    & .message{
+        background-color: white;
+        border: 1.5px solid #eee;
+        border-radius: 15px;
+        padding: 20px;
+        position: absolute;
+        top: 100px;
+        width: calc(100vw - 80px);
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+
+        a{
+            display: inline-block;
+            background-color: var(--mainColor);
+            padding: 10px 20px;
+            text-decoration: none;
+            color: var(--lightColor);
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 70px;
+            margin-top: 15px;
+        }
+
+    }
+
+    & .affichage{
+        display: flex;
+        gap: 10px;
+        background-color: white;
+        border: 1.5px solid #eee;
+        border-radius: 15px;
+        padding: 10px;
+        transition-duration: 0.35s;
+        align-items: center;
+        width: fit-content;
+        margin-bottom: 20px;
+        position: relative;
+
+        & .image-container img{
+            width: 150px;
+        }
+        & .details{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            & form:not(:last-child) input{
+                border: 2px solid #eee;
+                padding: 10px;
+                width: 80px;
+                background-color: transparent;
+                outline: none;
+                font-size: 16px;
+                font-weight: 600;
+                border-radius: 10px;
+            }
+            & form:not(:last-child) button{
+                padding: 12px 8px;
+                cursor: pointer;
+                border-radius: 8px;
+                color: var(--lightColor);
+                font-weight: 600;
+                background-color: var(--mainColor);
+                outline: none;
+                border: none;
+                transition-duration: 0.35s;
+            }
+            & form:not(:last-child) button:hover{
+                background-color: rgb(211, 155, 0);
+            }
+            & form:last-child{
+                & button{
+                    background-color: transparent;
+                    padding: 6px 10px;
+                    border-radius: 8px;
+                    border: 1px solid red;
+                    color: red;
+                    outline: none;
+                    transition-duration: 0.35s;
+                    cursor: pointer;
+                    position: absolute;
+                    top: 10px;
+                    right: 10px;
+                }
+            }
+            & form:last-child button:hover{
+                background-color: red;
+                color: var(--lightColor);
+            }
+        }
+    }
+    & .affichage:hover{
+        box-shadow: 1px 1px 30px rgba(0, 0, 0, 0.098);
+        transform: translateY(-4px);
+    }
+}
+
+.container .commander{
+    background-color: white;
+    border: 1.5px solid #eee;
+    border-radius: 15px;
+    width: calc(30% - 20px);
+    padding: 20px;
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+    & .prix{
+        margin: 20px 0;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        & .produit{
+            display: flex;
+            justify-content: space-between;
+            & i{
+                color: var(--mainColor);
+                margin-right: 4px;
+            }
+        }
+    }
+
+    & form button{
+        background-color: var(--mainColor);
+        color: var(--lightColor);
+        font-size: 16px;
+        font-weight: 600;
+        outline: none;
+        border: none;
+        border-radius: 70px;
+        width: 100%;
+        padding: 10px;
+        cursor: pointer;
+        margin-top: 10px;
+        transition-duration: 0.35s;
+    }
+    & form button:hover{
+        background-color: rgb(211, 155, 0);
+    }
+}
+
+@media (width < 1230px){
+    .container .produits .affichage{
+        width: 100%;
+    }
+    .container .produits .affichage .details{
+        width: fit-content;
+    }
+    .container .produits .affichage .details form:last-child{
+        position: absolute;
+        right: 10px;
+        top: 10px;
+    }
+}
+@media (width > 1290px){
+    .container .produits{
+        justify-content: center;
+        column-gap: 20px;
+    }
+}
+
+@media (width < 900px) {
+    header{display: none;}
+    .container{display: none;}
+}
