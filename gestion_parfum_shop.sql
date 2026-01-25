@@ -42,7 +42,7 @@ CREATE TABLE `clients` (
 INSERT INTO `clients` (`client_id`, `client_nom`, `client_email`, `client_password`, `username`) VALUES
 (1, 'x', 'x@gmail.com', 'x123*', 'user1'),
 (3, 'x man', 'xman@gmail.com', 'xman123*', 'user3'),
-(9, 'oussama drifi', 'oussama@gmail.com', '$2y$10$oMI0Xo7B/C0m1vEzvLRgZunbo4PnQHPuyQfLItXCk7HQ9B5.FsU1O', '');
+(9, 'oussama drifi', 'oussama@gmail.com', 'osm@123', 'oussama.drf');
 
 -- --------------------------------------------------------
 
@@ -71,9 +71,9 @@ INSERT INTO `commande` (`commande_id`, `commande_date`, `prix_totale`, `client_i
 (17, '2025-06-21', 2749.97, 1),
 (18, '2025-06-23', 4599.90, 1),
 (19, '2025-06-25', 5599.94, 1),
-(20, '2025-06-25', 3749.94, 9),
-(21, '2025-06-25', 4199.94, 9),
-(22, '2025-06-25', 4349.87, 9);
+(20, '2025-06-20', 3749.94, 9),
+(21, '2025-07-29', 4199.94, 9),
+(22, '2025-09-25', 4349.87, 9);
 
 -- --------------------------------------------------------
 
